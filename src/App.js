@@ -1,7 +1,10 @@
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import HomePage from './pages/homepage/HomePage';
+import HomePage from './pages/home/HomePage';
+import ShopPage from './pages/shop/ShopPage';
+
+
 
  const BabyPage=(props)=>{
    console.log(props);
@@ -18,8 +21,7 @@ function App() {
     
       <Routes>
 <Route  path="/" element={<HomePage/>}/>
-<Route  path="/babies" element={<BabyPage/>}/>
-<Route  path="/babies/:bdid" element={<BabyDetailPage/>}/>
+<Route  path="/shop" element={<ShopPage/>}/>
 
       </Routes>
       
