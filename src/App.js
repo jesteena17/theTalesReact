@@ -1,25 +1,28 @@
 
 import './App.css';
-import { BrowserRouter,Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/homepage/HomePage';
 
- const BabyPage=()=>{
+ const BabyPage=(props)=>{
+   console.log(props);
   return <div>Baby page</div>
 }
 
+const BabyDetailPage=()=>{
+  return <div>Baby detail page</div>
+}
 function App() {
   return (
     <div>
 
-      <BrowserRouter>
     
       <Routes>
-<Route exact path="/" element={<HomePage/>}/>
+<Route  path="/" element={<HomePage/>}/>
 <Route  path="/babies" element={<BabyPage/>}/>
+<Route  path="/babies/:bdid" element={<BabyDetailPage/>}/>
 
       </Routes>
       
-      </BrowserRouter>
    
     </div>
   );
