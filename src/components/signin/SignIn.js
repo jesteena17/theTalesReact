@@ -3,8 +3,8 @@ import CustomButton from '../custombutton/CustomButton';
 import FormInput from '../forminput/FormInput';
 import './signin.styles.scss';
 import {signInWithGoogle} from '../../firebase/firebase.utils';
-
-
+import { signInWithGit } from '../../firebase/firebase.utils';
+import { signInWithFb } from '../../firebase/firebase.utils';
 
 
 class SignIn extends Component{
@@ -53,9 +53,15 @@ label="password "
  <CustomButton type="submit">
     Sign In {/* Sign In  text btween btn tag is reffered as the children */}
  </CustomButton>
- <CustomButton  onClick={signInWithGoogle}>
+ <CustomButton isgooglebtn={true} onClick={signInWithGoogle}>
     Sign In With Google
  </CustomButton>
+ <CustomButton isgooglebtn={true} onClick={signInWithGit}>
+    Sign In With Git
+ </CustomButton>
+ {/* <CustomButton isgooglebtn={true} onClick={signInWithFb}>
+    Sign In With fb
+ </CustomButton> */}
 </form>
         </div>
     );

@@ -30,4 +30,13 @@ provider.setCustomParameters({prompt:'select_account'});
 export const signInWithGoogle=()=>{
     auth.signInWithPopup(provider);
 }
-// export default firebase; 
+const providergit = new firebase.auth.GithubAuthProvider();
+providergit.setCustomParameters({prompt:'select_account'});
+export const signInWithGit=()=>{
+    auth.signInWithPopup(providergit);
+}
+// const providerfb = new firebase.auth.FacebookAuthProvider();
+// providerfb.setCustomParameters({prompt:'select_account'});
+// export const signInWithFb = ()=>{
+//     auth.signInWithPopup(providerfb);
+// }

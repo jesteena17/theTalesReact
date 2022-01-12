@@ -36,7 +36,7 @@ render() {
       <div>
         
 
-    <Header/>
+    <Header currentUser={this.state.currentUser}/>
       <Routes>
 <Route  path="/" element={<HomePage/>}/>
 <Route  path="/shop" element={<ShopPage/>}/>
