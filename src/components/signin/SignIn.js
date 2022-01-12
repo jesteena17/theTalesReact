@@ -1,6 +1,12 @@
 import React,{Component, useState} from 'react';
+import CustomButton from '../custombutton/CustomButton';
 import FormInput from '../forminput/FormInput';
 import './signin.styles.scss';
+import {signInWithGoogle} from '../../firebase/firebase.utils';
+
+
+
+
 class SignIn extends Component{
     
    constructor()
@@ -34,15 +40,22 @@ handleChange=(e)=>{
 name="email"
  label="email"
  value={this.state.email}
+ required
  handleChange={this.handleChange}
  />
 <FormInput type="password" 
 name="password"
 label="password "
  value={this.state.password}
+ required
  handleChange={this.handleChange}
  />
- <button> Sign In</button>
+ <CustomButton type="submit">
+    Sign In {/* Sign In  text btween btn tag is reffered as the children */}
+ </CustomButton>
+ <CustomButton  onClick={signInWithGoogle}>
+    Sign In With Google
+ </CustomButton>
 </form>
         </div>
     );
