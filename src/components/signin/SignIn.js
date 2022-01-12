@@ -50,6 +50,8 @@ label="password "
  required
  handleChange={this.handleChange}
  />
+ <div className='buttons'>
+
  <CustomButton type="submit">
     Sign In {/* Sign In  text btween btn tag is reffered as the children */}
  </CustomButton>
@@ -62,6 +64,9 @@ label="password "
  {/* <CustomButton isgooglebtn={true} onClick={signInWithFb}>
     Sign In With fb
  </CustomButton> */}
+
+ </div>
+ 
 </form>
         </div>
     );
