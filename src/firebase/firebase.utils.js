@@ -63,6 +63,6 @@ try {
 }
 }
 
-console.log(snapShot);
+// console.log(snapShot);  
 return userRef;
 }
