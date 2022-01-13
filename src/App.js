@@ -6,7 +6,7 @@ import HomePage from './pages/home/HomePage';
 import ShopPage from './pages/shop/ShopPage';
 import Header from './components/header/header';
 import SignUpIn from './pages/signupin/SignUpIn';
-import { auth } from './firebase/firebase.utils';
+import { auth,createUserProfileDocument } from './firebase/firebase.utils';
 
 
 
@@ -20,17 +20,35 @@ constructor()
 }
 unSubscribefromAuth=null;
 componentDidMount(){
-this.unSubscribefromAuth= auth.onAuthStateChanged((user)=>{
-this.setState({currentUser:user})
-console.log(this.state.currentUser);
+this.unSubscribefromAuth= auth.onAuthStateChanged(async (userAuth)=>{
+// this.setState({currentUser:userAuth})
+if(userAuth){
+  const userRef=await createUserProfileDocument(userAuth);
+userRef.onSnapshot((snapshot)=>{
+  // console.log(snapshot.data());
+  this.setState({currentUser:{
+    id:snapshot.id,
+    ...snapshot.data()
+  }},()=>{console.log(this.state.currentUser);})
 })
+
+}
+else{
+  this.setState({currentUser:userAuth})
+}
+
+// console.log(this.state.currentUser);
+})
+
+
+
 }
 componentWillUnmount(){
 this.unSubscribefromAuth();
-console.log(this.state.currentUser);
+// console.log(this.state.currentUser);
 }
   
-
+ 
 render() {
     return (
       <div>
