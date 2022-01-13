@@ -1,4 +1,4 @@
-import React,{Component, useState} from 'react';
+import React,{Component} from 'react';
 import CustomButton from '../custombutton/CustomButton';
 import FormInput from '../forminput/FormInput';
 import './signin.styles.scss';

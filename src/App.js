@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { useState,useEffect } from 'react/';
+// import { useState,useEffect } from 'react/';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
@@ -29,7 +29,7 @@ userRef.onSnapshot((snapshot)=>{
   this.setState({currentUser:{
     id:snapshot.id,
     ...snapshot.data()
-  }},()=>{console.log(this.state.currentUser);})
+  }});
 })
 
 }
