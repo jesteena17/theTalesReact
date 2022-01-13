@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
-
+import { connect } from 'react-redux';
+//after adding reduc first step
+// now we hv to get pick this currentUser from redux for that use map and connect go down below
 const Header = ({currentUser}) => {
     return (
         <div className='header'> 
@@ -26,4 +28,10 @@ const Header = ({currentUser}) => {
     );
 }
 
-export default Header;
+//map
+const mapStateToProps=(state)=>({
+    currentUser:state.user.currentUser
+})
+
+export default connect(mapStateToProps) (Header);
+//now goto app.js and remove the passed props to header

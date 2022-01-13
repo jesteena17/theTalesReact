@@ -46,7 +46,7 @@ console.error(error);
             <h2>I already have an account</h2>
             <span>Sign in with your Email and Password</span>
 
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.handleSubmit}>
                <FormInput type="text"
                   name="email"
                   label="email"
