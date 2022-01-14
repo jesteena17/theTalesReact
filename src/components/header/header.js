@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
+import CartIcon from '../carticon/CartIcon';
+
 //after adding reduc first step
 // now we hv to get pick this currentUser from redux for that use map and connect go down below
 const Header = ({currentUser}) => {
@@ -21,6 +23,7 @@ const Header = ({currentUser}) => {
 {
     currentUser?<div className='menu' onClick={()=>auth.signOut()}>Sign Out</div>:<Link className='menu' to='/signin'>Sign In</Link>
 }
+<CartIcon/>
 
 
             </div>

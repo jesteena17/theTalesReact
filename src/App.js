@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { useState,useEffect } from 'react/';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,Navigate} from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
 import ShopPage from './pages/shop/ShopPage';
 import Header from './components/header/header';
@@ -84,14 +84,16 @@ render() {
       <Routes>
 <Route  path="/" element={<HomePage/>}/>
 <Route  path="/shop" element={<ShopPage/>}/>
-<Route  path="/signin" element={<SignUpIn/>}/>
-
+<Route path="/signin" element={!this.props.currentUser ? <SignUpIn /> : <Navigate to="/" />} /> 
+<Route path='*' element={<Navigate to='/signin' />} />
       </Routes>
       
       </div>
     )
   }
 }
+//get the updated state
+const mapStateToProps=({user})=>({currentUser:user.currentUser})
 
   const mapDispatchToProps=(dispatch)=>({
     setCurrentUser:(user)=>{
@@ -100,4 +102,10 @@ render() {
   })
   //first param null bcz appa doesnt want manipulate setcurrentuser state here
   //and remov the constructr and state we dnt need anymore
-export default connect(null,mapDispatchToProps)(App);
+
+
+// export default connect(null,mapDispatchToProps)(App);
+
+
+//update this with updated state
+export default connect(mapStateToProps,mapDispatchToProps)(App);
