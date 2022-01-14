@@ -1,12 +1,12 @@
 import React from 'react';
 import './collectionitem.styles.scss';
 import CustomButton from '../custombutton/CustomButton';
+import { connect } from 'react-redux';
+import { AddItem } from '../../redux/cart/cart.action';
 
-
-
-const Collectionitem = ({id,name,price,imageUrl}) => {
+const Collectionitem = ({item,AddItem}) => {
   
-  
+  const {id,name,price,imageUrl}=item;
   
     return (
         <div className='collectionitem'> 
@@ -16,10 +16,15 @@ const Collectionitem = ({id,name,price,imageUrl}) => {
 <span className='name'>{name}</span>
 <span className='price'>{price}</span>
 </div>
-<CustomButton inverted>Add to Cart</CustomButton>
+<CustomButton onClick={()=>{AddItem(item)}} inverted >Add to Cart</CustomButton>
 
         </div>
     );
 }
 
-export default Collectionitem;
+const mapDispatchStateToProps=dispatch=>({
+    AddItem:item=>dispatch(AddItem(item))
+})
+
+
+export default connect(null,mapDispatchStateToProps)(Collectionitem);
