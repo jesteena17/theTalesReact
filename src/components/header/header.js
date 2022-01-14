@@ -4,10 +4,10 @@ import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import CartIcon from '../carticon/CartIcon';
-
+import CartDropdown from '../cartdropdown/CartDropdown';
 //after adding reduc first step
 // now we hv to get pick this currentUser from redux for that use map and connect go down below
-const Header = ({currentUser}) => {
+const Header = ({currentUser,hidden}) => {
     return (
         <div className='header'> 
         <Link className='logocontainer' to='/' >
@@ -27,13 +27,23 @@ const Header = ({currentUser}) => {
 
 
             </div>
+            {
+                hidden?null: <CartDropdown/>
+            }
+           
         </div>
+        
     );
 }
 
 //map
-const mapStateToProps=(state)=>({
-    currentUser:state.user.currentUser
+//state has nested value so to destructure it use ---->  {user:{currentUser},cart:{hidden}}
+// const mapStateToProps=(state)=>({
+//     currentUser:state.user.currentUser
+// })
+//after destructuring from state
+const mapStateToProps=({user:{currentUser},cart:{hidden}})=>({
+    currentUser,hidden
 })
 
 export default connect(mapStateToProps) (Header);
