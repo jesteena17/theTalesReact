@@ -1,5 +1,5 @@
 import cartActionTypes from './cart.types';
-
+import { addItemtoCart } from './cart.utils'; 
 
 const INITIAL_STATE={
     hidden:true,
@@ -17,7 +17,10 @@ const cartReducer=(state=INITIAL_STATE,action)=>{
         case cartActionTypes.ADD_ITEM:
             return{
                 ...state,
-                cartItem:[...state.cartItem,action.payload]
+
+                // cartItem:[...state.cartItem,action.payload]
+                //change this to check if item alredy exist in cart based in utils
+                cartItem:addItemtoCart(state.cartItem,action.payload)
             };
         default:
             return state;
