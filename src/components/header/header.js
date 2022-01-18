@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
+import { createStructuredSelector } from 'reselect';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { connect } from 'react-redux';
 import CartIcon from '../carticon/CartIcon';
 import CartDropdown from '../cartdropdown/CartDropdown';
@@ -42,9 +45,24 @@ const Header = ({currentUser,hidden}) => {
 //     currentUser:state.user.currentUser
 // })
 //after destructuring from state
-const mapStateToProps=({user:{currentUser},cart:{hidden}})=>({
-    currentUser,hidden
+
+//befor reselect
+// const mapStateToProps=({user:{currentUser},cart:{hidden}})=>({
+//     currentUser,hidden
+// })
+
+
+//after reselect
+ //if we have 5 to 6 such selectrs 
+//  currentUser:selectCurrentUser(state),
+//  hidden:selectCartHidden(state)
+// cause code repeatation to avoid that use CREATERESTRUCTUREDSELECTORS
+const mapStateToProps=createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
 })
+
+
 
 export default connect(mapStateToProps) (Header);
 //now goto app.js and remove the passed props to header

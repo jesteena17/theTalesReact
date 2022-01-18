@@ -1,6 +1,6 @@
 import React from 'react';
 import './menuitempage.styles.scss';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 //3 props will come to this compo titl,sub titl and image. destructure it directly and use it
@@ -12,7 +12,7 @@ const MenuItem = ({ title, subtitle, imageUrl, id, size, urlLink }) => {
         //here image is having a hover effect it enlarges,here doing a trick bcz i dont want my image go out of this main div so removing the style from this div and adding it to a new div inside this div
         //changed
 
-        <NavLink className={`menuitem ${size}`}  to={urlLink}>
+        <Link className={`menuitem ${size}`}  to={urlLink}>
 
             {/* new div with old style  and add anew classname to it*/}
 
@@ -25,7 +25,7 @@ const MenuItem = ({ title, subtitle, imageUrl, id, size, urlLink }) => {
             </div>
 
 
-        </NavLink>
+        </Link>
 
 
 

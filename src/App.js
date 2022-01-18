@@ -9,7 +9,9 @@ import SignUpIn from './pages/signupin/SignUpIn';
 import { auth,createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
-
+import { selectCurrentUser } from './redux/user/user.selectors';
+import { createStructuredSelector } from 'reselect';
+import CheckoutPage from './pages/checkout/CheckoutPage';
 class App extends Component {
   // after adding reducer we dont want this anymore
 
@@ -83,9 +85,10 @@ render() {
 <Header/>
       <Routes>
 <Route  path="/" element={<HomePage/>}/>
+<Route path='/checkout' element={<CheckoutPage/>}/>
 <Route  path="/shop" element={<ShopPage/>}/>
 <Route path="/signin" element={!this.props.currentUser ? <SignUpIn /> : <Navigate to="/" />} /> 
-<Route path='*' element={<Navigate to='/signin' />} />
+
       </Routes>
       
       </div>
@@ -93,7 +96,10 @@ render() {
   }
 }
 //get the updated state
-const mapStateToProps=({user})=>({currentUser:user.currentUser})
+const mapStateToProps=createStructuredSelector(
+  {
+    currentUser:selectCurrentUser,
+  })
 
   const mapDispatchToProps=(dispatch)=>({
     setCurrentUser:(user)=>{
