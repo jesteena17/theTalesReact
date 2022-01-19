@@ -22,6 +22,11 @@ const cartReducer=(state=INITIAL_STATE,action)=>{
                 //change this to check if item alredy exist in cart based in utils
                 cartItems:addItemtoCart(state.cartItems,action.payload)
             };
+            case cartActionTypes.REMOVE_ITEM:
+                return{
+                    ...state,
+                    cartItems:state.cartItems.filter(cartItem=>cartItem.id!==action.payload.id)
+                }
         default:
             return state;
     }
