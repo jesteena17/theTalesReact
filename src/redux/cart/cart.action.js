@@ -5,7 +5,7 @@ export  const toggleCartHidden=()=>({
      //paylod is optional
 })
 
-
+//same is used for incremnt item qty
 export const AddItem=(item)=>({
      type:cartActionTypes.ADD_ITEM,
      payload:item
@@ -13,5 +13,10 @@ export const AddItem=(item)=>({
 
 export const RemoveItem=(item)=>({
      type:cartActionTypes.REMOVE_ITEM,
+     payload:item
+})
+
+export const DecrementItem=(item)=>({
+     type:cartActionTypes.DECREMENT_ITEM,
      payload:item
 })

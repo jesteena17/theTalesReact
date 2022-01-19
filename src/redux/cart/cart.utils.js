@@ -16,3 +16,25 @@ export const addItemtoCart=(cartItems,cartItemtoAdd)=>{
     return [...cartItems,{...cartItemtoAdd,quantity:1}]
 
 }
+
+
+export const decremntItemQtyfromCart=(cartItems,cartItemtoDecrementqty)=>{
+
+    const existingCartItem=cartItems.find(
+        cartItem=>cartItem.id===cartItemtoDecrementqty.id
+    )
+// if qty less than 1 then remove item from cart otherwise decrease qty
+if(existingCartItem.quantity===1)
+{
+    //if id not match then keep item else remove item
+return cartItems.filter(cartItem=>cartItem.id!==cartItemtoDecrementqty.id)
+}
+
+return cartItems.map(cartItem=>(
+    cartItem.id===cartItemtoDecrementqty.id?{...cartItem,quantity:cartItem.quantity-1}:cartItem
+))
+
+
+
+
+}
