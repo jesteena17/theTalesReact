@@ -17,7 +17,12 @@ import { createStructuredSelector } from 'reselect';
             <div className='shopage' >
                 
 {collections.map(({id,...otherdata})=>{
-    return( <CollectionPreview key={id} {...otherdata} />)
+    return(
+        
+        <CollectionPreview key={id} {...otherdata} />
+        
+        
+        )
 })}
 
 

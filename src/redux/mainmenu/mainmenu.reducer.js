@@ -5,7 +5,7 @@ const INITIAL_STATE={
                     imageUrl: 'https://media.istockphoto.com/photos/baby-boy-clothes-and-white-bear-toy-on-a-clothesline-picture-id527055994?k=20&m=527055994&s=612x612&w=0&h=kROQpsGON0HfHFYblPNkaBMrSUW0SWcte28iMkr85FQ=',
                     title: 'Babies',
                     subtitle: 'Super Comfy Baby Dresses',
-                    urlLink: 'babies'
+                    urlLink: 'babys'
                 },
                 {
                     id: 2,
@@ -19,7 +19,7 @@ const INITIAL_STATE={
                     imageUrl: "https://media.istockphoto.com/photos/suits-on-rack-picture-id1293366117?b=1&k=20&m=1293366117&s=170667a&w=0&h=c5-Rgz7CKkIdT-FDydn4mK1VZM49dNWhcN5B2GS9jgY=",
                     title: "Men",
                     subtitle: 'Fashionable Mens wear',
-                    urlLink: 'men'
+                    urlLink: 'mens'
                 },
                 {
                     id: 4,
