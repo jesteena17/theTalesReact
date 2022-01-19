@@ -1,31 +1,31 @@
 const SHOP_DATA = [
   {
     id: 1,
-    title: 'Hats',
-    routeName: 'hats',
+    title: 'Mittens',
+    routeName: 'mittens',
     items: [
       {
         id: 1,
-        name: 'Brown Brim',
-        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        name: 'white mittens',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10014504b.jpg',
         price: 25
       },
       {
         id: 2,
-        name: 'Blue Beanie',
-        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+        name: 'Blue mittens',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10014546a.jpg',
         price: 18
       },
       {
         id: 3,
-        name: 'Brown Cowboy',
-        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+        name: 'Pink mittens',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10194863a.jpg',
         price: 35
       },
       {
         id: 4,
-        name: 'Grey Brim',
-        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+        name: 'Red mittens',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10194845a.jpg',
         price: 25
       },
       {
@@ -62,37 +62,37 @@ const SHOP_DATA = [
   },
   {
     id: 2,
-    title: 'Sneakers',
-    routeName: 'sneakers',
+    title: 'Girls Fashion',
+    routeName: 'girls',
     items: [
       {
         id: 10,
-        name: 'Adidas NMD',
-        imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
+        name: 'Floral Top',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10555655a.jpg',
         price: 220
       },
       {
         id: 11,
-        name: 'Adidas Yeezy',
-        imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
+        name: 'Tshirts',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10329487a.jpg',
         price: 280
       },
       {
         id: 12,
-        name: 'Black Converse',
-        imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
+        name: 'Black Top',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/8913232c.jpg',
         price: 110
       },
       {
         id: 13,
-        name: 'Nike White AirForce',
-        imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
+        name: 'Light Blue Jeans',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/9799049b.jpg',
         price: 160
       },
       {
         id: 14,
-        name: 'Nike Red High Tops',
-        imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
+        name: 'Striped Pants',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/9993882a.jpg',
         price: 160
       },
       {
@@ -117,31 +117,31 @@ const SHOP_DATA = [
   },
   {
     id: 3,
-    title: 'Jackets',
+    title: 'Boys Fashion',
     routeName: 'jackets',
     items: [
       {
         id: 18,
-        name: 'Black Jean Shearling',
-        imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
+        name: 'Blue Jacket',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10335904b.jpg',
         price: 125
       },
       {
         id: 19,
-        name: 'Blue Jean Jacket',
-        imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+        name: 'Blue Hoodies',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10483109b.jpg',
         price: 90
       },
       {
         id: 20,
-        name: 'Grey Jean Jacket',
-        imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+        name: 'Grey  Jacket',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10256215b.jpg',
         price: 90
       },
       {
         id: 21,
-        name: 'Brown Shearling',
-        imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+        name: 'Black Hoodies ',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10482974a.jpg',
         price: 165
       },
       {
@@ -159,26 +159,26 @@ const SHOP_DATA = [
     items: [
       {
         id: 23,
-        name: 'Blue Tanktop',
-        imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+        name: 'White Striped Top',
+        imageUrl: 'https://n1.sdlcdn.com/imgs/j/p/q/230X258_sharpened/Texco-Crepe-Multi-Color-Shift-SDL118033278-1-465c5.webp',
         price: 25
       },
       {
         id: 24,
         name: 'Floral Blouse',
-        imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+        imageUrl: 'https://n1.sdlcdn.com/imgs/k/b/b/230X258_sharpened/Triraj-Net-Black-One-piece-SDL668146248-1-187bc.jpg',
         price: 20
       },
       {
         id: 25,
         name: 'Floral Dress',
-        imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+        imageUrl: 'https://n1.sdlcdn.com/imgs/k/b/b/230X258_sharpened/The-Dry-State-Rayon-Pink-SDL228558989-1-b4381.jpg',
         price: 80
       },
       {
         id: 26,
         name: 'Red Dots Dress',
-        imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+        imageUrl: 'https://n2.sdlcdn.com/imgs/j/t/v/AKS-Cotton-Brown-Fit-And-SDL276048021-1-0fd1b.jpg',
         price: 80
       },
       {
@@ -208,26 +208,26 @@ const SHOP_DATA = [
     items: [
       {
         id: 30,
-        name: 'Camo Down Vest',
-        imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+        name: 'Tshirt',
+        imageUrl: 'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/ee026dfd-53d5-431f-8f49-793d1b1a3ca91579692118057-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-3.jpg',
         price: 325
       },
       {
         id: 31,
-        name: 'Floral T-shirt',
-        imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+        name: 'Maroon Jean Jacket',
+        imageUrl: 'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13137108/2021/7/27/c19d430d-ea70-42d4-ba4b-da3cde8478e11627373157096HIGHLANDERMenPurpleSolidDenimJacket1.jpg',
         price: 20
       },
       {
         id: 32,
         name: 'Black & White Longsleeve',
-        imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+        imageUrl: 'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14550612/2021/12/30/96a89978-413d-4e7d-b60a-79f12daf3bbc1640848713771-Nautica-Men-Jackets-2751640848713047-1.jpg',
         price: 25
       },
       {
         id: 33,
-        name: 'Pink T-shirt',
-        imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+        name: 'White T-shirt',
+        imageUrl: 'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/10/29/b04a4b74-0c20-4ada-8776-ba8354f75d891572370795581-1.jpg',
         price: 25
       },
       {
