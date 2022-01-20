@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './header.styles.scss';
+// import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
@@ -8,33 +8,41 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { connect } from 'react-redux';
 import CartIcon from '../carticon/CartIcon';
 import CartDropdown from '../cartdropdown/CartDropdown';
+import { HeaderContainer,LogoContainer,MenusContainer ,MenuDiv,MenuLink} from './header.styles';
+
+
+
+
+
+
 //after adding reduc first step
 // now we hv to get pick this currentUser from redux for that use map and connect go down below
 const Header = ({currentUser,hidden}) => {
     return (
-        <div className='header'> 
-        <Link className='logocontainer' to='/' >
+        <HeaderContainer> 
+        <LogoContainer to='/' >
         <span className='logo'>The Tales</span> 
 
-        </Link>
+        </LogoContainer>
 
         
-            <div className='menus'>
-<Link className='menu' to='/shop'>Shop</Link>
-<Link className='menu' to='/about'>About</Link>
-<Link className='menu' to='/contact'>Contact</Link>
+            <MenusContainer>
+<MenuLink  to='/shop'>Shop</MenuLink>
+<MenuLink  to='/about'>About</MenuLink>
+<MenuLink  to='/contact'>Contact</MenuLink>
 {
-    currentUser?<div className='menu' onClick={()=>auth.signOut()}>Sign Out</div>:<Link className='menu' to='/signin'>Sign In</Link>
+    currentUser?<MenuDiv  onClick={()=>auth.signOut()}>Sign Out</MenuDiv>:
+    <MenuLink  to='/signin'>Sign In</MenuLink>
 }
 <CartIcon/>
 
 
-            </div>
+            </MenusContainer>
             {
                 hidden?null: <CartDropdown/>
             }
            
-        </div>
+        </HeaderContainer>
         
     );
 }

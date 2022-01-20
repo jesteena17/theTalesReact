@@ -1,11 +1,19 @@
 import React from 'react';
-import './Homepage.styles.scss';
+// import './Homepage.styles.scss';
 import MainMenu from '../../components/mainmenu/MainMenu';
 import { Route,Routes } from 'react-router-dom';
 import CollectionPage from '../collection/CollectionPage';
+import { HomePageContainer } from './HomePage.styles';
+
+
+
+
+
+
+
 const HomePage = () => {
     return (
-        <div className='homepage'>
+        <HomePageContainer>
              
              
              <Routes>
@@ -15,7 +23,7 @@ const HomePage = () => {
         </Routes>
              
                
-         </div>
+         </HomePageContainer>
     )
 }
 
