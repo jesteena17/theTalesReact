@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
 import CollectionsOverview from '../../components/collectionoverview/CollectionsOverview';
 import CollectionPage from '../collection/CollectionPage';
@@ -15,7 +15,7 @@ import { Route,Routes } from 'react-router-dom';
                
                <Routes>
           <Route path="/" element={<CollectionsOverview/>}></Route>
-          <Route path=":category" element={<CollectionPage />}></Route>
+          <Route path=":collectionId" element={<CollectionPage />}></Route>
           
         </Routes>
 

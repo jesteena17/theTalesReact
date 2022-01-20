@@ -91,15 +91,15 @@ render() {
       <Routes>
 
 <Route path='/checkout' element={<CheckoutPage/>}/>
-<Route path='/babies' element={<CheckoutPage/>}/>
+
 <Route   path="/shop/*" element={<ShopPage/>}>
 
-<Route  path=":category" element={<CollectionPage />} />
+<Route  path=":collectionId" element={<CollectionPage />} />
   </Route>
 <Route path="/signin" element={!this.props.currentUser ? <SignUpIn /> : <Navigate to="/" />} /> 
 <Route  path="/*" element={<HomePage/>}>
 
-<Route  path=":category" element={<CollectionPage />} />
+<Route  path=":collectionId" element={<CollectionPage />} />
   </Route>
       </Routes>
       

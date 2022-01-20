@@ -118,7 +118,7 @@ const SHOP_DATA = [
   {
     id: 3,
     title: 'Boys Fashion',
-    routeName: 'jackets',
+    routeName: 'boys',
     items: [
       {
         id: 18,

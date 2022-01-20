@@ -1,10 +1,7 @@
 import React from 'react';
 import './collectionpreview.styles.scss';
 import Collectionitem from '../../components/collectionitem/CollectionItem';
-import { Link,Route ,Routes} from 'react-router-dom';
-import CollectionPage from '../../pages/collection/CollectionPage';
-import CollectionsOverview from '../collectionoverview/CollectionsOverview';
-
+import { Link} from 'react-router-dom';
 
 
 const CollectionPreview = ({routeName,title,items}) => {

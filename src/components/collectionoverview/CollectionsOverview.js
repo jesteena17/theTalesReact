@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './CollectionsOverview.styles.scss';
 import CollectionPreview from '../../components/collectionpreview/CollectionPreview';
 import { connect } from 'react-redux';

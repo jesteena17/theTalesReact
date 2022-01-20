@@ -10,7 +10,7 @@ const HomePage = () => {
              
              <Routes>
           <Route path="/" element={<MainMenu />}></Route>
-          <Route path=":category" element={<CollectionPage />}></Route>
+          <Route path=":collectionId" element={<CollectionPage />}></Route>
           
         </Routes>
              
