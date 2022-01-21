@@ -1,5 +1,5 @@
 import firebase from 'firebase/compat/app';
-import { initializeApp } from "firebase/app";
+
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
@@ -21,6 +21,26 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
+//add shop data to fb by creating a collection
+
+/*
+export const addCollectionandDocument=async (collectionKey,objectsToAdd)=>{
+const collectionRef=firestore.collection(collectionKey);
+console.log(collectionRef);
+const batch=firestore.batch();
+objectsToAdd.forEach(obj=>{
+  const newDocRef=collectionRef.doc();
+  batch.set(newDocRef,obj);
+
+})
+return await batch.commit().then(function() {
+  alert('Done.')
+})
+.catch(err => alert(`There was an error: ${err}`))
+}
+
+*/
+
 
 export const auth=firebase.auth(); 
 export const firestore=firebase.firestore();
