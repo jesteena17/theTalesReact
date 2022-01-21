@@ -40,6 +40,22 @@ return await batch.commit().then(function() {
 }
 
 */
+//convert the firabse collection to an object
+
+export const convertCollectionsSnapshopToMap=(collections)=>{
+ const transformCollections= collections.docs.map(doc=>{
+   const {title,items}=doc.data();
+   return {
+routeName:encodeURI(title.toLowerCase()),
+id:doc.id
+,title,items
+   }
+ })
+ console.log(transformCollections );
+
+}
+
+
 
 
 export const auth=firebase.auth(); 
