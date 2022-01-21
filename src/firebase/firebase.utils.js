@@ -50,7 +50,12 @@ routeName:encodeURI(title.toLowerCase()),
 id:doc.id
 ,title,items
    }
- })
+ });
+return transformCollections.reduce((accumulator,collection)=>{
+  accumulator[collection.title.toLowerCase()]=collection;
+  return accumulator;
+},{})
+
  console.log(transformCollections );
 
 }

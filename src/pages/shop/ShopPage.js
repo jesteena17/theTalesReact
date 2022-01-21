@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import CollectionsOverview from '../../components/collectionoverview/CollectionsOverview';
 import CollectionPage from '../collection/CollectionPage';
 import { Route,Routes } from 'react-router-dom';
 import { firestore,auth,convertCollectionsSnapshopToMap } from '../../firebase/firebase.utils';
+
+import { updateCollections } from '../../redux/shop/shop.actions';
+
+
+
+
 
 /*
  const ShopPage =() =>{
@@ -34,11 +40,17 @@ return (
 
 
      componentDidMount(){
+const {updateCollections}=this.props; 
+
 const collectionRef=firestore.collection('collections');
-collectionRef.onSnapshot(async snapshot=>
+collectionRef.onSnapshot(async snapshot=>{
     // console.log(snapshot)
-    convertCollectionsSnapshopToMap(snapshot)
- )}
+    const collectionsmap=convertCollectionsSnapshopToMap(snapshot);
+    // console.log(collectionsmap );
+    updateCollections(collectionsmap);
+});
+
+}
 
 
 
@@ -57,4 +69,11 @@ collectionRef.onSnapshot(async snapshot=>
 }
 
 
-    export default ShopPage;
+const mapDisptachToProps= (dispatch)=>({
+
+    updateCollections:(collectionsMap)=>{
+                dispatch(updateCollections(collectionsMap))
+    }
+});
+
+    export default connect(null,mapDisptachToProps)(ShopPage);
