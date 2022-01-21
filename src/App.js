@@ -12,6 +12,11 @@ import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 import CheckoutPage from './pages/checkout/CheckoutPage';
+import CollectionPage from './pages/collection/CollectionPage';
+
+
+
+
 class App extends Component {
   // after adding reducer we dont want this anymore
 
@@ -84,11 +89,18 @@ render() {
 
 <Header/>
       <Routes>
-<Route  path="/" element={<HomePage/>}/>
-<Route path='/checkout' element={<CheckoutPage/>}/>
-<Route  path="/shop" element={<ShopPage/>}/>
-<Route path="/signin" element={!this.props.currentUser ? <SignUpIn /> : <Navigate to="/" />} /> 
 
+<Route path='/checkout' element={<CheckoutPage/>}/>
+
+<Route   path="/shop/*" element={<ShopPage/>}>
+
+<Route  path=":collectionId" element={<CollectionPage />} />
+  </Route>
+<Route path="/signin" element={!this.props.currentUser ? <SignUpIn /> : <Navigate to="/" />} /> 
+<Route  path="/*" element={<HomePage/>}>
+
+<Route  path=":collectionId" element={<CollectionPage />} />
+  </Route>
       </Routes>
       
       </div>

@@ -1,25 +1,25 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+ babies: {
     id: 1,
     title: 'Babies',
     routeName: 'babies',
     items: [
       {
         id: 1,
-        name: 'white mittens',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10014504b.jpg',
+        name: 'Jhabla Set',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/9594829a.jpg',
         price: 25
       },
       {
         id: 2,
-        name: 'Blue mittens',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10014546a.jpg',
+        name: 'Hooded Towel',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/9105481a.jpg',
         price: 18
       },
       {
         id: 3,
-        name: 'Pink mittens',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10194863a.jpg',
+        name: 'Cap Mitten Set',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/10016665a.jpg',
         price: 35
       },
       {
@@ -30,37 +30,37 @@ const SHOP_DATA = [
       },
       {
         id: 5,
-        name: 'Green Beanie',
-        imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+        name: 'Full Romper',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10355736a.jpg',
         price: 18
       },
       {
         id: 6,
-        name: 'Palm Tree Cap',
-        imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
+        name: 'Half Romper',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/10348608a.jpg',
         price: 14
       },
       {
         id: 7,
-        name: 'Red Beanie',
-        imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+        name: 'T & Shorts',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/219x265/10132976a.jpg',
         price: 18
       },
       {
         id: 8,
-        name: 'Wolf Cap',
-        imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
+        name: 'Vests',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/10423801a.jpg',
         price: 14
       },
       {
         id: 9,
-        name: 'Blue Snapback',
-        imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+        name: 'Bloomer',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10361873a.jpg',
         price: 16
       }
     ]
   },
-  {
+  girls:{
     id: 2,
     title: 'Girls Fashion',
     routeName: 'girls',
@@ -79,8 +79,8 @@ const SHOP_DATA = [
       },
       {
         id: 12,
-        name: 'Black Top',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/8913232c.jpg',
+        name: 'Belly Shoes',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/9727841a.jpg',
         price: 110
       },
       {
@@ -91,34 +91,34 @@ const SHOP_DATA = [
       },
       {
         id: 14,
-        name: 'Striped Pants',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/9993882a.jpg',
+        name: 'Printed Frok',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/9470800a.jpg',
         price: 160
       },
       {
         id: 15,
-        name: 'Nike Brown High Tops',
-        imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
+        name: 'Aline Top',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/9924880a.jpg',
         price: 160
       },
       {
         id: 16,
-        name: 'Air Jordan Limited',
-        imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
+        name: 'BioWashed Frok',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/9287387a.jpg',
         price: 190
       },
       {
         id: 17,
-        name: 'Timberlands',
-        imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
+        name: 'Pull Over Sweatshirt',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/9694729a.jpg',
         price: 200
       }
     ]
   },
-  {
+  boys:{
     id: 3,
     title: 'Boys Fashion',
-    routeName: 'jackets',
+    routeName: 'boys',
     items: [
       {
         id: 18,
@@ -128,31 +128,31 @@ const SHOP_DATA = [
       },
       {
         id: 19,
-        name: 'Blue Hoodies',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10483109b.jpg',
+        name: 'Full Sleev Shirt',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/3297774a.jpg',
         price: 90
       },
       {
         id: 20,
-        name: 'Grey  Jacket',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10256215b.jpg',
+        name: 'BlowAshed tee',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10249178a.jpg',
         price: 90
       },
       {
         id: 21,
-        name: 'Black Hoodies ',
-        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10482974a.jpg',
+        name: 'Shirt',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/300x364/10356299a.jpg',
         price: 165
       },
       {
         id: 22,
-        name: 'Tan Trench',
-        imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+        name: 'Ethnic Kurta',
+        imageUrl: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/9707683a.jpg',
         price: 185
       }
     ]
   },
-  {
+ womens: {
     id: 4,
     title: 'Womens',
     routeName: 'womens',
@@ -201,7 +201,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  mens:{
     id: 5,
     title: 'Mens',
     routeName: 'mens',
@@ -244,6 +244,6 @@ const SHOP_DATA = [
       }
     ]
   }
-];
+} ;
 
 export default SHOP_DATA;
