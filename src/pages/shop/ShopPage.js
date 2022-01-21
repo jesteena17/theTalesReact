@@ -7,7 +7,7 @@ import { firestore,auth,convertCollectionsSnapshopToMap } from '../../firebase/f
 
 import { updateCollections } from '../../redux/shop/shop.actions';
 
-
+import WithSpinner from '../../components/with-spinner/with-spinner';
 
 
 
@@ -29,14 +29,15 @@ return (
 //now to fetch data from firebase we need a class level component with lifecyclemthod
 //so tht all the child compo will get data when the app loads
 
-
+const CollectionOverviewWithSpinner=WithSpinner(CollectionsOverview);
+const CollectionPageWithSpinner=WithSpinner(CollectionPage);
 
  class ShopPage extends Component {
     unSubscribeFromSnapshot=null; 
     
-    constructor(){
-         super();
-     }
+    state={
+        loading:true,
+    }
 
 
      componentDidMount(){
@@ -48,6 +49,7 @@ collectionRef.onSnapshot(async snapshot=>{
     const collectionsmap=convertCollectionsSnapshopToMap(snapshot);
     // console.log(collectionsmap );
     updateCollections(collectionsmap);
+    this.setState({loading:false});
 });
 
 }
@@ -55,12 +57,20 @@ collectionRef.onSnapshot(async snapshot=>{
 
 
   render() {
+      const {loading,...props}=this.state;
     return (
         <div className='shopage' style={{"paddingTop": "87px"}}>
            
            <Routes>
-      <Route path="/" element={<CollectionsOverview/>}></Route>
+      {/* <Route path="/" element={<CollectionsOverview/>}></Route>
       <Route path=":collectionId" element={<CollectionPage />}></Route>
+       */}
+
+<Route path="/"
+element={<CollectionOverviewWithSpinner isLoading={loading} {...props}/>} 
+></Route>
+      <Route path=":collectionId" 
+      element={<CollectionPageWithSpinner isLoading={loading} {...props}/>}></Route>
       
     </Routes>
         </div>
