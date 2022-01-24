@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import './header.styles.scss';
+import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
@@ -9,9 +10,6 @@ import { connect } from 'react-redux';
 import CartIcon from '../carticon/CartIcon';
 import CartDropdown from '../cartdropdown/CartDropdown';
 import { HeaderContainer,LogoContainer,MenusContainer ,MenuDiv,MenuLink} from './header.styles';
-
-
-
 
 
 
@@ -74,3 +72,4 @@ const mapStateToProps=createStructuredSelector({
 
 export default connect(mapStateToProps) (Header);
 //now goto app.js and remove the passed props to header
+

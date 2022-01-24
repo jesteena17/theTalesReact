@@ -6,6 +6,7 @@ import HomePage from './pages/home/HomePage';
 import ShopPage from './pages/shop/ShopPage';
 import Header from './components/header/header';
 import SignUpIn from './pages/signupin/SignUpIn';
+// import { auth,createUserProfileDocument ,addCollectionandDocument} from './firebase/firebase.utils';
 import { auth,createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
@@ -13,7 +14,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 import CheckoutPage from './pages/checkout/CheckoutPage';
 import CollectionPage from './pages/collection/CollectionPage';
-
+// import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
 
 
@@ -30,7 +31,7 @@ class App extends Component {
 unSubscribefromAuth=null;
 componentDidMount(){
 const {setCurrentUser}=this.props;
-
+// const {setCurrentUser,collectionsArray}=this.props;
 this.unSubscribefromAuth= auth.onAuthStateChanged(async (userAuth)=>{
 // this.setState({currentUser:userAuth})
 if(userAuth){
@@ -56,8 +57,8 @@ userRef.onSnapshot(snapshot=>{
   });
 })
 
-setCurrentUser(userAuth)
-
+setCurrentUser(userAuth);
+// addCollectionandDocument('collections',collectionsArray.map(({title,items})=>({title,items})));
 
 }
 else{
@@ -111,12 +112,14 @@ render() {
 const mapStateToProps=createStructuredSelector(
   {
     currentUser:selectCurrentUser,
+    // collectionsArray:selectCollectionsForPreview
   })
 
   const mapDispatchToProps=(dispatch)=>({
     setCurrentUser:(user)=>{
       dispatch(setCurrentUser(user))
     }
+
   })
   //first param null bcz appa doesnt want manipulate setcurrentuser state here
   //and remov the constructr and state we dnt need anymore

@@ -32,7 +32,7 @@ export const selectCollections=createSelector(
 
 export const selectCollectionsForPreview=createSelector(
     [selectCollections],
-    collections=>Object.keys(collections).map(key=>collections[key])
+    collections=>collections?Object.keys(collections).map(key=>collections[key]):[]
     )
 
 
@@ -51,7 +51,7 @@ export const selectCollection=collectionUrlParam=>
         //array(2)
         // collections=>collections.find(collection=>collection.id===COLLECTION_ID_MAP[collectionUrlParam])
 //object(3)
-collections=>collections[collectionUrlParam]
+collections=>collections?collections[collectionUrlParam]:null
     )
 
   
