@@ -4,6 +4,7 @@ import MainMenu from '../../components/mainmenu/MainMenu';
 import { Route,Routes } from 'react-router-dom';
 import CollectionPage from '../collection/CollectionPage';
 import { HomePageContainer } from './HomePage.styles';
+import ProductDetailsPage from '../productdetails/ProductDetailsPage';
 
 
 
@@ -18,8 +19,10 @@ const HomePage = () => {
              
              <Routes>
           <Route path="/" element={<MainMenu />}></Route>
-          <Route path=":collectionId" element={<CollectionPage />}></Route>
-          
+         
+          <Route path=":collectionId/*" element={<CollectionPage />}> 
+          <Route path=":detailid" element={<ProductDetailsPage />}/>
+          </Route>
         </Routes>
              
                

@@ -44,13 +44,17 @@ const CollectionPageWithSpinner=WithSpinner(CollectionPage);
 const {updateCollections}=this.props; 
 
 const collectionRef=firestore.collection('collections');
-collectionRef.onSnapshot(async snapshot=>{
-    // console.log(snapshot)
-    const collectionsmap=convertCollectionsSnapshopToMap(snapshot);
-    // console.log(collectionsmap );
-    updateCollections(collectionsmap);
-    this.setState({loading:false});
-});
+         collectionRef.get().then( snapshot => {
+             // console.log(snapshot)
+             const collectionsmap = convertCollectionsSnapshopToMap(snapshot);
+             // console.log(collectionsmap );
+             updateCollections(collectionsmap);
+             this.setState({ loading: false });
+         });
+             
+             
+             
+          
 
 }
 
